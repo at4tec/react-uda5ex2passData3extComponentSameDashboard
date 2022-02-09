@@ -95,9 +95,16 @@ class App extends Component {
   (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). The
   Component's constructor is the first thing that runs when the object is created.
   */
-  constructor(props) {
-    super(props);
-    this.usersByMovie = {};
+
+    
+  
+
+  /*
+  The render method gets called automatically every time the value of the
+  component's props changes.
+  */
+  render() {
+    this.usersByMovie = [];
 
     /*
     We can map the users by the movie they liked.
@@ -111,16 +118,10 @@ class App extends Component {
         this.usersByMovie[movieID] = [profile.userID];
       }
     });
-  }
 
-  /*
-  The render method gets called automatically every time the value of the
-  component's props changes.
-  */
-  render() {
     return (
       <div>
-          <h2>How Popular is Your Favorite Movie?</h2>
+          <h2>How Popular is Your Favorite Movie?3</h2>
         <Dashboard
           usersByMovie={this.usersByMovie}
           movies={movies}
